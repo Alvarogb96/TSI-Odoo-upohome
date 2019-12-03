@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_alquiler_form_view">
+			<field name="name">upohome_alquiler_form_view</field>
+			<field name="model">upohome.alquiler</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de alquileres">
+					<group string="Alquileres">
+						<field name="name" />
+						<field name="fechaInicio" />
+						<field name="fechaFin" />
+						<field name="cliente_id">
+							<tree>
+								<field name="nombre" />
+							</tree>
+						</field>
+						<field name="vivienda_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_alquiler_tree_view">
+			<field name="name">upohome_alquiler_tree_view</field>
+			<field name="model">upohome.alquiler</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de alquileres">
+					<field name="name" />
+					<field name="fechaInicio" />
+					<field name="fechaFin" />
+					<field name="cliente_id">
+						<tree>
+							<field name="nombre" />
+							<field name="apellidos" />
+							<field name="name" />
+						</tree>
+					</field>
+					<field name="vivienda_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Vista de calendario con el id del alquiler, dni cliente y id de la vivienda-->
+		<record model="ir.ui.view" id="upohome_alquiler_calendar_view">
+			<field name="name">upohome_alquiler_calendar_view</field>
+			<field name="model">upohome.alquiler</field>
+			<field name="arch" type="xml">
+				<calendar string="Clases" color="name"
+					date_start="fechaInicio" date_stop="fechaFin" mode="month">
+					<field name="name" />
+					<field name="cliente_id" />
+					<field name="vivienda_id" />
+				</calendar>
+			</field>
+		</record>
+
+		<record id="act_alquiler" model="ir.actions.act_window">
+			<field name="name">Alquileres</field>
+			<field name="res_model">upohome.alquiler</field>
+			<field name="view_mode">tree,form,calendar</field>
+		</record>
+
+		<menuitem name="Alquileres" id="alquileres_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver alquileres" id="alquileres_submenu_2"
+			parent="alquileres_submenu" sequence="110" action="act_alquiler" />
+	</data>
+</odoo>

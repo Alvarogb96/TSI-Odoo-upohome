@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_cliente_form_view">
+			<field name="name">upohome_cliente_form_view</field>
+			<field name="model">upohome.cliente</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de clientes">
+					<group string="Clientes">
+						<field name="name" />
+						<field name="nombre" />
+						<field name="apellidos" />
+						<field name="telefono" />
+						<field name="domicilio" />
+						<field name="alquiler_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_cliente_tree_view">
+			<field name="name">upohome_cliente_tree_view</field>
+			<field name="model">upohome.cliente</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de clientes">
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="name" />
+					<field name="alquiler_ids" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Vista search agrupando por alquiler_id -->
+		
+		<record model="ir.ui.view" id="view_upohome_cliente_search">
+			<field name="name">view_upohome_cliente_search</field>
+			<field name="model">upohome.cliente</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="alquiler_ids" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_alquiler" string="ID Alquiler"
+							context="{'group_by':'alquiler_ids'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+
+		<record id="act_cliente" model="ir.actions.act_window">
+			<field name="name">Clientes</field>
+			<field name="res_model">upohome.cliente</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_upohome_cliente_search" />
+		</record>
+		<menuitem id="upohome" name="UPOHOME" action="act_cliente" />
+		<menuitem name="Clientes" id="clientes_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver clientes" id="clientes_submenu_2"
+			parent="clientes_submenu" sequence="110" action="act_cliente" />
+	</data>
+</odoo>
