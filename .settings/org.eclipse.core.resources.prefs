@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//models/alquiler.py=utf-8
 encoding//models/cliente.py=utf-8
+encoding//models/vivienda.py=utf-8
