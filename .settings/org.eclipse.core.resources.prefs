@@ -4,5 +4,7 @@ encoding//models/alquiler.py=utf-8
 encoding//models/cita.py=utf-8
 encoding//models/cliente.py=utf-8
 encoding//models/empleado.py=utf-8
+encoding//models/galeria.py=utf-8
+encoding//models/limpieza.py=utf-8
 encoding//models/propietario.py=utf-8
 encoding//models/vivienda.py=utf-8

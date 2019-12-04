@@ -6,3 +6,5 @@ from . import vivienda
 from . import cita
 from . import propietario
 from . import empleado
+from . import limpieza 
+from . import galeria
