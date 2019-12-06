@@ -9,4 +9,7 @@ class cita(models.Model):
     name = fields.Char('ID de la cita', size=9, required=True)
     fecha = fields.Datetime('Fecha y hora',required=True)
     descripcion = fields.Char('Descripcion', size=100)
+    cliente_id = fields.Many2one('upohome.cliente', 'Cliente') 
+    empleado_ids = fields.Many2one('upohome.empleado', 'Empleado') 
+    vivienda_ids = fields.Many2many('upohome.vivienda', 'Viviendas')
 

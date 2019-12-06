@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_contrato_form_view">
+			<field name="name">upohome_contrato_form_view</field>
+			<field name="model">upohome.contrato</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de contratos">
+					<group string="Contratos">
+						<field name="name" />
+						<field name="precioMedio" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_contrato_tree_view">
+			<field name="name">upohome_contrato_tree_view</field>
+			<field name="model">upohome.contrato</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de contratos">
+					<field name="name" />
+					<field name="precioMedio" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_contrato" model="ir.actions.act_window">
+			<field name="name">Contratos</field>
+			<field name="res_model">upohome.contrato</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Contratos" id="contratos_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver contratos" id="contratos_submenu_2"
+			parent="contratos_submenu" sequence="110" action="act_contrato" />
+	</data>
+</odoo>

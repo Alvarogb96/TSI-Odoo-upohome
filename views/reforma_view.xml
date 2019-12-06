@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_reforma_form_view">
+			<field name="name">upohome_reforma_form_view</field>
+			<field name="model">upohome.reforma</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de reforma">
+					<group string="Reforma">
+						<field name="name" />
+						<field name="añoReforma" />
+						<field name="partes" />
+						<field name="coste" />
+						<field name="vivienda_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_reforma_tree_view">
+			<field name="name">upohome_reforma_tree_view</field>
+			<field name="model">upohome.reforma</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de reformas">
+					<field name="name" />
+					<field name="añoReforma" />
+					<field name="partes" />
+					<field name="coste" />
+					<field name="vivienda_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_reforma" model="ir.actions.act_window">
+			<field name="name">Reformas</field>
+			<field name="res_model">upohome.reforma</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Reformas" id="reforma_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver reformas" id="reformas_submenu_2"
+			parent="reforma_submenu" sequence="110" action="act_reforma" />
+	</data>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_cita_form_view">
+			<field name="name">upohome_cita_form_view</field>
+			<field name="model">upohome.cita</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de citas">
+					<group string="Citas">
+						<field name="name" />
+						<field name="fecha" />
+						<field name="descripcion" />
+						<field name="cliente_id" />
+						<field name="empleado_ids" />
+						<field name="vivienda_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_cita_tree_view">
+			<field name="name">upohome_cita_tree_view</field>
+			<field name="model">upohome.cita</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de citas">
+					<field name="name" />
+					<field name="fecha" />
+					<field name="descripcion" />
+					<field name="cliente_id" />
+					<field name="empleado_ids" />
+					<field name="vivienda_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Vista search agrupando por fecha -->
+
+		<record model="ir.ui.view" id="view_upohome_fecha_search">
+			<field name="name">view_upohome_fecha_search</field>
+			<field name="model">upohome.cita</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="fecha" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_fecha" string="Fecha de cita"
+							context="{'group_by':'fecha'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="act_cita" model="ir.actions.act_window">
+			<field name="name">Citas</field>
+			<field name="res_model">upohome.cita</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Citas" id="citas_submenu" parent="upohome"
+			sequence="100" />
+		<menuitem name="Ver citas" id="citas_submenu_2"
+			parent="citas_submenu" sequence="110" action="act_cita" />
+	</data>
+</odoo>

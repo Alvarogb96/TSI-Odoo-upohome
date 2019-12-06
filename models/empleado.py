@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields,models
+from odoo import fields, models
 
 
 class empleado(models.Model):
@@ -12,3 +12,5 @@ class empleado(models.Model):
     telefono = fields.Char('Telefono', size=9, required=True)
     salario = fields.Float("Salario", required=True)
     domicilio = fields.Char('Domicilio', size=65, required=True)
+    cita_ids = fields.One2many('upohome.cita', 'cliente_id', 'Citas')
+    limpieza_ids = fields.One2many('upohome.limpieza', 'empleado_ids', 'Limpieza')

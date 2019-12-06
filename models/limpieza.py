@@ -11,3 +11,4 @@ class limpieza(models.Model):
     finalizado = fields.Selection([('si','Sí'),
                                      ('no','No'),],
                                      'Finalizado')
+    empleado_ids = fields.Many2one('upohome.empleado','Empleado')

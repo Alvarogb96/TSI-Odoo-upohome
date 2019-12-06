@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields,models
+from odoo import fields, models
 
 
 class cliente(models.Model):
@@ -11,6 +11,6 @@ class cliente(models.Model):
     apellidos = fields.Char('Apellidos', size=60, required=True) 
     telefono = fields.Char('Telefono', size=9, required=True)
     domicilio = fields.Char('Domicilio', size=65, required=True)
-    alquiler_ids = fields.One2many('upohome.alquiler','cliente_id', 'Alquileres')
-    
+    alquiler_ids = fields.One2many('upohome.alquiler', 'cliente_id', 'Alquileres')
+    cita_ids = fields.One2many('upohome.cita', 'cliente_id', 'Citas')
     

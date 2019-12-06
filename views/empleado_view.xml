@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_empleado_form_view">
+			<field name="name">upohome_empleado_form_view</field>
+			<field name="model">upohome.empleado</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de empleados">
+					<group string="Empleados">
+						<field name="name" />
+						<field name="nombre" />
+						<field name="apellidos" />
+						<field name="telefono" />
+						<field name="salario" />
+						<field name="domicilio" />
+						<field name="cita_ids" />
+						<field name="limpieza_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_empleado_tree_view">
+			<field name="name">upohome_empleado_tree_view</field>
+			<field name="model">upohome.empleado</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de empleados">
+					<field name="name" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="telefono" />
+					<field name="salario" />
+					<field name="domicilio" />
+					<field name="cita_ids" />
+					<field name="limpieza_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_empleado" model="ir.actions.act_window">
+			<field name="name">Empleados</field>
+			<field name="res_model">upohome.empleado</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Empleados" id="empleados_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver empleados" id="empleados_submenu_2"
+			parent="empleados_submenu" sequence="110" action="act_empleado" />
+	</data>
+</odoo>
