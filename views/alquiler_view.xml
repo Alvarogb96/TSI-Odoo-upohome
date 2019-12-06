@@ -17,6 +17,7 @@
 							</tree>
 						</field>
 						<field name="vivienda_id" />
+						<field name="contrato_ids"/>
 					</group>
 				</form>
 			</field>
@@ -38,6 +39,7 @@
 						</tree>
 					</field>
 					<field name="vivienda_id" />
+					<field name="contrato_ids"/>
 				</tree>
 			</field>
 		</record>

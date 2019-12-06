@@ -11,5 +11,5 @@ class alquiler(models.Model):
     fechaFin = fields.Datetime('Fecha fin', required=True) 
     cliente_id = fields.Many2one('upohome.cliente', 'Cliente') 
     vivienda_id = fields.Many2one('upohome.vivienda', 'Vivienda')
-    #contrato_ids = fields.One2many('upohome.contrato', 'alquiler_ids', 'Contrato')
+    contrato_ids = fields.One2many('upohome.contrato', 'alquiler_id', 'Contratos')
     
