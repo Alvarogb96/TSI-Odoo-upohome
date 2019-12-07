@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class vivienda(models.Model):
@@ -9,10 +9,13 @@ class vivienda(models.Model):
     name = fields.Char('ID vivienda', size=35, required=True)
     direccion = fields.Char('Dirección', size=60, required=True)
     precioAlquiler = fields.Float("Precio alquiler") 
-    estadoDeDisponibilidad = fields.Selection([('alquilada', 'Alquilada'),
-                                     ('no alquilada', 'No alquilada'),
-                                     ('en reforma', 'En reforma'), ],
-                                     'Estado de disponibilidad')
+    #estadoDeDisponibilidad = fields.Selection([('alquilada', 'Alquilada'),
+    #                                ('noAlquilada', 'No alquilada'),
+    #                                 ('enReforma', 'En reforma'), ],
+    #                                 'Estado de disponibilidad')
+    state = fields.Selection([('alquilada', 'Alquilada'),
+                              ('noAlquilada', 'No alquilada'), ],
+                              "Estado", default='noAlquilada')
     imagenPrincipal = fields.Binary('Imagen') 
     numHabitaciones = fields.Integer("Numero de habitaciones")
     descripcion = fields.Char('Descripcion', size=100, required=True)
@@ -26,3 +29,17 @@ class vivienda(models.Model):
     cita_ids = fields.Many2many('upohome.cita', string='Citas para ver la vivienda')
     reforma_ids = fields.One2many('upohome.reforma', 'vivienda_ids', 'Reformas')
     propietario_ids = fields.Many2one('upohome.propietario', 'Propietario')
+    
+    #WORKFLOWS
+    @api.one
+    def btn_submit_to_alquilada(self):
+        self.write({'state':'alquilada'})
+        
+    @api.one
+    def btn_submit_to_noAlquilada(self):
+        self.write({'state':'noAlquilada'})
+    
+    @api.onchange('precioAlquiler')
+    def onchange_gymclass(self):
+        if self.precioAlquiler <= 0.0 : 
+            raise models.ValidationError('El precio de alquiler debe ser superior a 0')

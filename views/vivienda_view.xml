@@ -7,6 +7,14 @@
 			<field name="model">upohome.vivienda</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de viviendas">
+					<header>
+						<button name="btn_submit_to_alquilada" string="Alquilar"
+							type="object" class="oe_highlight" states="noAlquilada" />
+						<button name="btn_submit_to_noAlquilada"
+							string="Liberar alquiler" type="object" class="oe_highlight"
+							states="alquilada" />
+						<field name="state" widget="statusbar" />
+					</header>
 					<group string="Vivienda">
 						<field name="imagenPrincipal" nolabel="1" widget="image"
 							class="oe_avatar" />
@@ -15,7 +23,7 @@
 						<field name="name" />
 						<field name="direccion" />
 						<field name="precioAlquiler" />
-						<field name="estadoDeDisponibilidad" />
+					<!--<field name="estadoDeDisponibilidad" /> -->
 						<field name="numHabitaciones" />
 						<field name="descripcion" />
 						<field name="exterior" />
@@ -34,11 +42,11 @@
 					<field name="name" />
 					<field name="direccion" />
 					<field name="precioAlquiler" />
-					<field name="estadoDeDisponibilidad" />
+					<!--<field name="estadoDeDisponibilidad" /> -->
 				</tree>
 			</field>
 		</record>
-		
+
 		<!-- Vista de gráfico por precio -->
 
 		<record model="ir.ui.view" id="upohome_vivienda_graph_view">
