@@ -31,6 +31,22 @@
 				</tree>
 			</field>
 		</record>
+		
+		<!-- Vista search agrupando por año de la reforma -->
+
+		<record model="ir.ui.view" id="view_upohome_añoReforma_search">
+			<field name="name">view_upohome_añoReforma_search</field>
+			<field name="model">upohome.reforma</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="añoReforma" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_añoReforma" string="Año de la reforma"
+							context="{'group_by':'añoReforma'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
 		<record id="act_reforma" model="ir.actions.act_window">
 			<field name="name">Reformas</field>

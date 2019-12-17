@@ -12,6 +12,7 @@
 						<field name="fecha" />
 						<field name="finalizado" />
 						<field name="empleado_ids" />
+						<field name="vivienda_ids" />
 					</group>
 				</form>
 			</field>
@@ -26,11 +27,12 @@
 					<field name="fecha" />
 					<field name="finalizado" />
 					<field name="empleado_ids" />
+					<field name="vivienda_ids" />
 				</tree>
 			</field>
 		</record>
 
-		<!-- vista graph para fecha limpieza -->
+		<!-- vista graph para fecha limpieza y finalizacion -->
 
 		<record model="ir.ui.view" id="view_fecha_line_graph">
 			<field name="name">Limpieza</field>
@@ -38,10 +40,25 @@
 			<field name="type">graph</field>
 			<field name="arch" type="xml">
 				<graph string="Limpiezas">
+					<field name="finalizado" group="True" />
 					<field name="fecha" />
-					<field name="name" group="True" />
-					<field name="finalizado" />
 				</graph>
+			</field>
+		</record>
+
+		<!-- Vista search agrupando por fecha -->
+
+		<record model="ir.ui.view" id="view_upohome_fecha_search">
+			<field name="name">view_upohome_fecha_search</field>
+			<field name="model">upohome.limpieza</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="fecha" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_fecha" string="Fecha de limpieza"
+							context="{'group_by':'fecha'}" />
+					</group>
+				</search>
 			</field>
 		</record>
 

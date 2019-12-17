@@ -14,3 +14,6 @@ class empleado(models.Model):
     domicilio = fields.Char('Domicilio', size=65, required=True)
     cita_ids = fields.One2many('upohome.cita', 'cliente_id', 'Citas')
     limpieza_ids = fields.One2many('upohome.limpieza', 'empleado_ids', 'Limpieza')
+    
+    def cancelarCitas(self):
+        self.write({'cita_ids':[ (5,) ]})

@@ -13,7 +13,7 @@
 						<button name="btn_submit_to_noAlquilada"
 							string="Liberar alquiler" type="object" class="oe_highlight"
 							states="alquilada" />
-						<field name="state" widget="statusbar" />
+						<field name='state' widget='statusbar' />
 					</header>
 					<group string="Vivienda">
 						<field name="imagenPrincipal" nolabel="1" widget="image"
@@ -23,12 +23,16 @@
 						<field name="name" />
 						<field name="direccion" />
 						<field name="precioAlquiler" />
-					<!--<field name="estadoDeDisponibilidad" /> -->
 						<field name="numHabitaciones" />
 						<field name="descripcion" />
 						<field name="exterior" />
 						<field name="climatizacion" />
 						<field name="alquiler_ids" />
+						<field name="cita_ids" />
+						<field name="reforma_ids" />
+						<field name="propietario_ids" />
+						<field name="limpieza_ids" />
+						<field name="galeria_ids" />
 					</group>
 				</form>
 			</field>
@@ -42,7 +46,11 @@
 					<field name="name" />
 					<field name="direccion" />
 					<field name="precioAlquiler" />
-					<!--<field name="estadoDeDisponibilidad" /> -->
+					<field name="cita_ids" />
+					<field name="reforma_ids" />
+					<field name="propietario_ids" />
+					<field name="limpieza_ids" />
+					<field name="galeria_ids" />
 				</tree>
 			</field>
 		</record>

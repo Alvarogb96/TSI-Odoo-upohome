@@ -10,7 +10,6 @@
 					<group string="Contratos">
 						<field name="name" />
 						<field name="precioMedio" />
-						<field name="alquiler_id"/>
 					</group>
 				</form>
 			</field>
@@ -23,7 +22,6 @@
 				<tree string="Lista de contratos">
 					<field name="name" />
 					<field name="precioMedio" />
-					<field name="alquiler_id"/>	
 				</tree>
 			</field>
 		</record>

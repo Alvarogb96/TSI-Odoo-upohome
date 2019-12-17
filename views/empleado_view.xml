@@ -17,6 +17,9 @@
 						<field name="cita_ids" />
 						<field name="limpieza_ids" />
 					</group>
+					<newline></newline>
+					<button name="cancelarCitas" string="Cancelar citas"
+						type="object"></button>
 				</form>
 			</field>
 		</record>
@@ -35,6 +38,22 @@
 					<field name="cita_ids" />
 					<field name="limpieza_ids" />
 				</tree>
+			</field>
+		</record>
+
+		<!-- Vista search agrupando por salario -->
+
+		<record model="ir.ui.view" id="view_upohome_salario_search">
+			<field name="name">view_upohome_salario_search</field>
+			<field name="model">upohome.empleado</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="salario" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_salario" string="Salario"
+							context="{'group_by':'salario'}" />
+					</group>
+				</search>
 			</field>
 		</record>
 

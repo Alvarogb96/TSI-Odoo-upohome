@@ -14,6 +14,7 @@
 						<field name="telefono" />
 						<field name="domicilio" />
 						<field name="alquiler_ids" />
+						<field name="cita_ids" />
 					</group>
 				</form>
 			</field>
@@ -28,12 +29,13 @@
 					<field name="apellidos" />
 					<field name="name" />
 					<field name="alquiler_ids" />
+					<field name="cita_ids" />
 				</tree>
 			</field>
 		</record>
-		
+
 		<!-- Vista search agrupando por alquiler_id -->
-		
+
 		<record model="ir.ui.view" id="view_upohome_cliente_search">
 			<field name="name">view_upohome_cliente_search</field>
 			<field name="model">upohome.cliente</field>
@@ -47,8 +49,6 @@
 				</search>
 			</field>
 		</record>
-
-
 
 		<record id="act_cliente" model="ir.actions.act_window">
 			<field name="name">Clientes</field>

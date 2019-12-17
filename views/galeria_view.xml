@@ -23,6 +23,7 @@
 						<field name="imagen5" nolabel="1" widget="image"
 							class="oe_avatar" />
 						<field name="descripcion5" />
+						<field name="vivienda_ids" />
 					</group>
 				</form>
 			</field>
@@ -48,6 +49,7 @@
 					<field name="imagen5" nolabel="1" widget="image"
 						class="oe_avatar" />
 					<field name="descripcion5" />
+					<field name="vivienda_ids" />
 				</tree>
 			</field>
 		</record>

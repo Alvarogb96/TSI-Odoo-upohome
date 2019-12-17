@@ -10,3 +10,7 @@ from . import limpieza
 from . import galeria
 from . import reforma
 from . import contrato
+from . import electricidad
+from . import agua
+from . import gas
+from . import internet

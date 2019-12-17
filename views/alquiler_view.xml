@@ -17,7 +17,6 @@
 							</tree>
 						</field>
 						<field name="vivienda_id" />
-						<field name="contrato_ids"/>
 					</group>
 				</form>
 			</field>
@@ -39,12 +38,12 @@
 						</tree>
 					</field>
 					<field name="vivienda_id" />
-					<field name="contrato_ids"/>
 				</tree>
 			</field>
 		</record>
 
-		<!-- Vista de calendario con el id del alquiler, dni cliente y id de la vivienda-->
+		<!-- Vista de calendario con el id del alquiler, dni cliente y id de la 
+			vivienda -->
 		<record model="ir.ui.view" id="upohome_alquiler_calendar_view">
 			<field name="name">upohome_alquiler_calendar_view</field>
 			<field name="model">upohome.alquiler</field>

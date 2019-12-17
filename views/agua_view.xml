@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upohome_agua_form_view">
+			<field name="name">upohome_agua_form_view</field>
+			<field name="model">upohome.agua</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de agua">
+					<group string="Agua">
+						<field name="name" />
+						<field name="tarifa" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_agua_tree_view">
+			<field name="name">upohome_agua_tree_view</field>
+			<field name="model">upohome.agua</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Contratos de Agua">
+					<field name="name" />
+					<field name="tarifa" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_agua" model="ir.actions.act_window">
+			<field name="name">Contratos de Aguas</field>
+			<field name="res_model">upohome.agua</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Contratos de Aguas" id="aguas_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver contratos de aguas" id="aguas_submenu_2"
+			parent="aguas_submenu" sequence="110" action="act_agua" />
+	</data>
+</odoo>
