@@ -12,4 +12,5 @@ class cita(models.Model):
     cliente_id = fields.Many2one('upohome.cliente', 'Cliente') 
     empleado_ids = fields.Many2one('upohome.empleado', 'Empleado') 
     vivienda_ids = fields.Many2many('upohome.vivienda', 'Viviendas')
+    _sql_constraints = [('upohome_cita_name_unique','UNIQUE (name)','El ID de la cita debe ser único')]
 

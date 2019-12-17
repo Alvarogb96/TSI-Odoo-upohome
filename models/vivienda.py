@@ -29,6 +29,9 @@ class vivienda(models.Model):
     cita_ids = fields.Many2many('upohome.cita', string='Citas para ver la vivienda')
     reforma_ids = fields.One2many('upohome.reforma', 'vivienda_ids', 'Reformas')
     propietario_ids = fields.Many2one('upohome.propietario', 'Propietario')
+    limpieza_ids = fields.One2many('upohome.limpieza', 'vivienda_ids', 'Limpiezas')
+    galeria_ids = fields.Many2one('upohome.galeria', 'Galeria')
+    _sql_constraints = [('upohome_vivienda_name_unique','UNIQUE (name)','El ID vivienda debe ser único')]
     
     #WORKFLOWS
     @api.one

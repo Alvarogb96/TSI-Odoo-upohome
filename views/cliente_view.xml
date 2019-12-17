@@ -14,6 +14,7 @@
 						<field name="telefono" />
 						<field name="domicilio" />
 						<field name="alquiler_ids" />
+						<field name="cita_ids" />
 					</group>
 				</form>
 			</field>
@@ -28,6 +29,7 @@
 					<field name="apellidos" />
 					<field name="name" />
 					<field name="alquiler_ids" />
+					<field name="cita_ids" />
 				</tree>
 			</field>
 		</record>
