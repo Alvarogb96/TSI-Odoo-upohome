@@ -11,7 +11,8 @@
 						<field name="name" />
 						<field name="fecha" />
 						<field name="finalizado" />
-						<field name="empleado_ids" />
+						<field name="empleado_id" />
+						<field name="vivienda_id" />
 					</group>
 				</form>
 			</field>
@@ -25,7 +26,8 @@
 					<field name="name" />
 					<field name="fecha" />
 					<field name="finalizado" />
-					<field name="empleado_ids" />
+					<field name="empleado_id" />
+					<field name="vivienda_id" />
 				</tree>
 			</field>
 		</record>

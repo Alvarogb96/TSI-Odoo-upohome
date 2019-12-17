@@ -12,7 +12,7 @@
 						<field name="fecha" />
 						<field name="descripcion" />
 						<field name="cliente_id" />
-						<field name="empleado_ids" />
+						<field name="empleado_id" />
 						<field name="vivienda_ids" />
 					</group>
 				</form>
@@ -28,7 +28,7 @@
 					<field name="fecha" />
 					<field name="descripcion" />
 					<field name="cliente_id" />
-					<field name="empleado_ids" />
+					<field name="empleado_id" />
 					<field name="vivienda_ids" />
 				</tree>
 			</field>

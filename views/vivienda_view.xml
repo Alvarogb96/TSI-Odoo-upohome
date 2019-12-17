@@ -29,6 +29,7 @@
 						<field name="exterior" />
 						<field name="climatizacion" />
 						<field name="alquiler_ids" />
+						<field name="propietario_id"/>
 					</group>
 				</form>
 			</field>
@@ -42,6 +43,7 @@
 					<field name="name" />
 					<field name="direccion" />
 					<field name="precioAlquiler" />
+					<field name="propietario_id"/>
 					<!--<field name="estadoDeDisponibilidad" /> -->
 				</tree>
 			</field>

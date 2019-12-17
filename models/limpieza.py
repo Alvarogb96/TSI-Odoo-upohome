@@ -11,6 +11,7 @@ class limpieza(models.Model):
     finalizado = fields.Selection([('si','Sí'),
                                      ('no','No'),],
                                      'Finalizado')
-    empleado_ids = fields.Many2one('upohome.empleado','Empleado')
-    vivienda_ids = fields.Many2one('upohome.vivienda', 'Vivienda')
+    empleado_id = fields.Many2one('upohome.empleado','Empleado')
+    vivienda_id = fields.Many2one('upohome.vivienda', 'Vivienda')
+    
     _sql_constraints = [('upohome_limpieza_name_unique','UNIQUE (name)','El ID de limpieza debe ser único')]

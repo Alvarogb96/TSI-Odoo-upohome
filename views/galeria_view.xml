@@ -8,6 +8,7 @@
 			<field name="arch" type="xml">
 				<form string="Galería de Imágenes">
 					<group string="Galería">
+						<field name="vivienda_ids"/>
 						<field name="imagen1" nolabel="1" widget="image"
 							class="oe_avatar" />
 						<field name="descripcion1" />
@@ -33,6 +34,7 @@
 			<field name="model">upohome.galeria</field>
 			<field name="arch" type="xml">
 				<tree string="Galería de Imágenes">
+				<field name="vivienda_ids"/>
 					<field name="imagen1" nolabel="1" widget="image"
 						class="oe_avatar" />
 					<field name="descripcion1" />
