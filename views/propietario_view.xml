@@ -12,7 +12,17 @@
 						<field name="nombre" />
 						<field name="apellidos" />
 						<field name="telefono" />
-						<field name="vivienda_ids" />
+						<field name="vivienda_ids">
+							<tree>
+								<field name="name" />
+								<field name="direccion" />
+								<field name="precioAlquiler" />
+								<field name="numHabitaciones" />
+								<field name="descripcion" />
+								<field name="exterior" />
+								<field name="climatizacion" />
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>

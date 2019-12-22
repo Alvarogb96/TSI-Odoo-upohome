@@ -21,7 +21,15 @@
 								<field name="vivienda_id" />
 							</tree>
 						</field>
-						<field name="cita_ids" />
+						<field name="cita_ids">
+							<tree>
+								<field name="name" />
+								<field name="fecha" />
+								<field name="descripcion" />
+								<field name="empleado_id" />
+								<field name="vivienda_ids" />
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>

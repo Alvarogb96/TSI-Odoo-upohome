@@ -23,13 +23,46 @@
 						<field name="name" />
 						<field name="direccion" />
 						<field name="precioAlquiler" />
-					<!--<field name="estadoDeDisponibilidad" /> -->
+						<!--<field name="estadoDeDisponibilidad" /> -->
 						<field name="numHabitaciones" />
 						<field name="descripcion" />
 						<field name="exterior" />
 						<field name="climatizacion" />
-						<field name="alquiler_ids" />
-						<field name="propietario_id"/>
+						<field name="alquiler_ids">
+							<tree>
+								<field name="name" />
+								<field name="fechaInicio" />
+								<field name="fechaFin" />
+								<field name="cliente_id" />
+								<field name="contrato_ids" />
+							</tree>
+						</field>
+						<field name="propietario_id" />
+						<field name="limpieza_ids">
+							<tree>
+								<field name="name" />
+								<field name="fecha" />
+								<field name="finalizado" />
+								<field name="empleado_id" />
+							</tree>
+						</field>
+						<field name="reforma_ids">
+							<tree>
+								<field name="name" />
+								<field name="añoReforma" />
+								<field name="partes" />
+								<field name="coste" />
+							</tree>
+						</field>
+						<field name="cita_ids">
+							<tree>
+								<field name="name" />
+								<field name="fecha" />
+								<field name="descripcion" />
+								<field name="empleado_id" />
+								<field name="cliente_id" />
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>
@@ -43,7 +76,11 @@
 					<field name="name" />
 					<field name="direccion" />
 					<field name="precioAlquiler" />
-					<field name="propietario_id"/>
+					<field name="propietario_id" />
+					<field name="numHabitaciones" />
+					<field name="descripcion" />
+					<field name="exterior" />
+					<field name="climatizacion" />
 					<!--<field name="estadoDeDisponibilidad" /> -->
 				</tree>
 			</field>
