@@ -8,3 +8,7 @@ class internet(models.Model):
     
     name = fields.Char('Compañia', size = 45, required=True)
     #tarifa = fields.Float('Precio estimado', required=True)
+    tipo = fields.Selection([('fibra', 'Fibra'),
+                              ('adsl', 'ADSL'), ],
+                              "Tipo de internet contratado", required=True)
+    Velocidad = fields.Float("Velocidad", required=True)
