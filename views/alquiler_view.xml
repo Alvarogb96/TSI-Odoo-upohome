@@ -8,21 +8,33 @@
 			<field name="arch" type="xml">
 				<form string="Formulario de alquileres">
 					<group string="Alquileres">
+						<group colspan="4">
 						<field name="name" />
-						<field name="fechaInicio" />
-						<field name="fechaFin" />
-						<field name="cliente_id">
-							<tree>
-								<field name="nombre" />
-							</tree>
-						</field>
-						<field name="vivienda_id" />
-						<field name="contrato_ids">
-							<tree>
-								<field name="name" />
-								<field name="precioMedio" />
-							</tree>
-						</field>
+						</group>
+						<notebook colspan="4">
+							<page string="Datos del alquiler">
+								<group>
+									<field name="fechaInicio" />
+									<field name="fechaFin" />
+									<field name="cliente_id">
+										<tree>
+											<field name="nombre" />
+										</tree>
+									</field>
+									<field name="vivienda_id" />
+								</group>
+							</page>
+							<page string="Contratos asociados">
+								<group>
+									<field name="contrato_ids">
+										<tree>
+											<field name="name" />
+											<field name="precioMedio" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>
@@ -44,12 +56,13 @@
 						</tree>
 					</field>
 					<field name="vivienda_id" />
-					<field name="contrato_ids"/>
+					<field name="contrato_ids" />
 				</tree>
 			</field>
 		</record>
 
-		<!-- Vista de calendario con el id del alquiler, dni cliente y id de la vivienda-->
+		<!-- Vista de calendario con el id del alquiler, dni cliente y id de la 
+			vivienda -->
 		<record model="ir.ui.view" id="upohome_alquiler_calendar_view">
 			<field name="name">upohome_alquiler_calendar_view</field>
 			<field name="model">upohome.alquiler</field>

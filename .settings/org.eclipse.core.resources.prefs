@@ -14,4 +14,5 @@ encoding//models/limpieza.py=utf-8
 encoding//models/propietario.py=utf-8
 encoding//models/reforma.py=utf-8
 encoding//models/vivienda.py=utf-8
+encoding/__init__.py=utf-8
 encoding/__manifest__.py=utf-8

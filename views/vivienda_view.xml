@@ -20,49 +20,65 @@
 							class="oe_avatar" />
 					</group>
 					<group>
-						<field name="name" />
-						<field name="direccion" />
-						<field name="precioAlquiler" />
-						<!--<field name="estadoDeDisponibilidad" /> -->
-						<field name="numHabitaciones" />
-						<field name="descripcion" />
-						<field name="exterior" />
-						<field name="climatizacion" />
-						<field name="alquiler_ids">
-							<tree>
-								<field name="name" />
-								<field name="fechaInicio" />
-								<field name="fechaFin" />
-								<field name="cliente_id" />
-								<field name="contrato_ids" />
-							</tree>
-						</field>
-						<field name="propietario_id" />
-						<field name="limpieza_ids">
-							<tree>
-								<field name="name" />
-								<field name="fecha" />
-								<field name="finalizado" />
-								<field name="empleado_id" />
-							</tree>
-						</field>
-						<field name="reforma_ids">
-							<tree>
-								<field name="name" />
-								<field name="añoReforma" />
-								<field name="partes" />
-								<field name="coste" />
-							</tree>
-						</field>
-						<field name="cita_ids">
-							<tree>
-								<field name="name" />
-								<field name="fecha" />
-								<field name="descripcion" />
-								<field name="empleado_id" />
-								<field name="cliente_id" />
-							</tree>
-						</field>
+						<group colspan="4">
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos de la vivienda">
+								<group>
+									<field name="direccion" />
+									<field name="precioAlquiler" />
+									<!--<field name="estadoDeDisponibilidad" /> -->
+									<field name="numHabitaciones" />
+									<field name="descripcion" />
+									<field name="exterior" />
+									<field name="climatizacion" />
+									<field name="propietario_id" />
+								</group>
+							</page>
+							<page string="Alquileres asociados">
+								<field name="alquiler_ids">
+									<tree>
+										<field name="name" />
+										<field name="fechaInicio" />
+										<field name="fechaFin" />
+										<field name="cliente_id" />
+										<field name="contrato_ids" />
+									</tree>
+								</field>
+							</page>
+							<page string="Limpiezas asociadas">
+								<field name="limpieza_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="finalizado" />
+										<field name="empleado_id" />
+									</tree>
+								</field>
+							</page>
+							<page string="Reformas asociadas">
+								<field name="reforma_ids">
+									<tree>
+										<field name="name" />
+										<field name="añoReforma" />
+										<field name="partes" />
+										<field name="coste" />
+									</tree>
+								</field>
+							</page>
+							<page string="Citas asociadas">
+								<field name="cita_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="descripcion" />
+										<field name="empleado_id" />
+										<field name="cliente_id" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>
