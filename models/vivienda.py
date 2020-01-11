@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class vivienda(models.Model):
     _name = 'upohome.vivienda'
     
-    name = fields.Char('ID vivienda', size=35, required=True)
+    name = fields.Char('ID vivienda', size=5, required=True)
     direccion = fields.Char('Dirección', size=60, required=True)
     precioAlquiler = fields.Float("Precio alquiler", required=True) 
     #estadoDeDisponibilidad = fields.Selection([('alquilada', 'Alquilada'),
@@ -27,7 +27,7 @@ class vivienda(models.Model):
                                      'Climatizacion')
     alquiler_ids = fields.One2many('upohome.alquiler', 'vivienda_id', 'Alquileres')
     cita_ids = fields.Many2many('upohome.cita', string='Citas para ver la vivienda')
-    reforma_ids = fields.One2many('upohome.reforma', 'vivienda_ids', 'Reformas')
+    reforma_ids = fields.One2many('upohome.reforma', 'vivienda_id', 'Reformas')
     propietario_id = fields.Many2one('upohome.propietario', 'Propietario')
     limpieza_ids = fields.One2many('upohome.limpieza', 'vivienda_id', 'Limpiezas')
     galeria_id = fields.Many2one('upohome.galeria', 'Galeria')

@@ -7,7 +7,7 @@
 			<field name="model">upohome.cliente</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de clientes">
-					<group string="Clientes">
+					<group string="Cliente">
 						<group colspan="4">
 							<field name="name" />
 						</group>

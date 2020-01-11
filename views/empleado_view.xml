@@ -7,7 +7,7 @@
 			<field name="model">upohome.empleado</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de empleados">
-					<group string="Empleados">
+					<group string="Empleado">
 						<group>
 							<field name="name" />
 						</group>

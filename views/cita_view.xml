@@ -7,7 +7,7 @@
 			<field name="model">upohome.cita</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de citas">
-					<group string="Citas">
+					<group string="Cita">
 						<group>
 							<field name="name" />
 						</group>

@@ -7,7 +7,7 @@
 			<field name="model">upohome.contrato</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de contratos">
-					<group string="Contratos">
+					<group string="Contrato">
 						<field name="name" />
 						<field name="precioMedio" />
 						<field name="alquiler_id"/>

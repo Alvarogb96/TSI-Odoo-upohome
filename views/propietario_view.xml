@@ -7,22 +7,32 @@
 			<field name="model">upohome.propietario</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de propietarios">
-					<group string="Propietarios">
-						<field name="name" />
-						<field name="nombre" />
-						<field name="apellidos" />
-						<field name="telefono" />
-						<field name="vivienda_ids">
-							<tree>
-								<field name="name" />
-								<field name="direccion" />
-								<field name="precioAlquiler" />
-								<field name="numHabitaciones" />
-								<field name="descripcion" />
-								<field name="exterior" />
-								<field name="climatizacion" />
-							</tree>
-						</field>
+					<group string="Propietario">
+						<group>
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos del propietario">
+								<group>
+									<field name="nombre" />
+									<field name="apellidos" />
+									<field name="telefono" />
+								</group>
+							</page>
+							<page string="Viviendas asociadas">
+								<field name="vivienda_ids">
+									<tree>
+										<field name="name" />
+										<field name="direccion" />
+										<field name="precioAlquiler" />
+										<field name="numHabitaciones" />
+										<field name="descripcion" />
+										<field name="exterior" />
+										<field name="climatizacion" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>

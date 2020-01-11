@@ -13,4 +13,5 @@ class cliente(models.Model):
     domicilio = fields.Char('Domicilio', size=65, required=True)
     alquiler_ids = fields.One2many('upohome.alquiler', 'cliente_id', 'Alquileres')
     cita_ids = fields.One2many('upohome.cita', 'cliente_id', 'Citas')
+    _sql_constraints = [('upohome_cliente_name_unique','UNIQUE (name)','El DNI debe ser único')]
     

@@ -12,7 +12,7 @@
 						<field name="añoReforma" />
 						<field name="partes" />
 						<field name="coste" />
-						<field name="vivienda_ids" />
+						<field name="vivienda_id" />
 					</group>
 				</form>
 			</field>
@@ -27,7 +27,7 @@
 					<field name="añoReforma" />
 					<field name="partes" />
 					<field name="coste" />
-					<field name="vivienda_ids" />
+					<field name="vivienda_id" />
 				</tree>
 			</field>
 		</record>
