@@ -18,4 +18,4 @@ class galeria(models.Model):
     descripcion4 = fields.Char('Descripcion 4', size=85, required=False)
     imagen5 = fields.Binary('Imagen 5', required=False)
     descripcion5 = fields.Char('Descripcion 5', size=85, required=False)
-    vivienda_ids = fields.Many2one('upohome.vivienda', 'Vivienda')
+    vivienda_id = fields.Many2one('upohome.vivienda', 'Vivienda')

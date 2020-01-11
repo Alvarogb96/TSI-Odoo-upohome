@@ -16,13 +16,17 @@
 						<field name="state" widget="statusbar" />
 					</header>
 					<group string="Vivienda">
+
+						<group>
 						<field name="imagenPrincipal" nolabel="1" widget="image"
-							class="oe_avatar" />
-					</group>
-					<group>
+								class="oe_avatar" />
+						</group>
 						<group colspan="4">
 							<field name="name" />
+							
 						</group>
+						
+						
 						<notebook colspan="4">
 							<page string="Datos de la vivienda">
 								<group>
@@ -34,6 +38,7 @@
 									<field name="exterior" />
 									<field name="climatizacion" />
 									<field name="propietario_id" />
+									<field name="galeria_id"/>
 								</group>
 							</page>
 							<page string="Alquileres asociados">

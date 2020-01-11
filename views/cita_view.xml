@@ -8,12 +8,22 @@
 			<field name="arch" type="xml">
 				<form string="Formulario de citas">
 					<group string="Citas">
-						<field name="name" />
-						<field name="fecha" />
-						<field name="descripcion" />
-						<field name="cliente_id" />
-						<field name="empleado_id" />
-						<field name="vivienda_ids" />
+						<group>
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos de la cita">
+								<group>
+									<field name="fecha" />
+									<field name="descripcion" />
+									<field name="cliente_id" />
+									<field name="empleado_id" />
+								</group>
+							</page>
+							<page string="Viviendas asociadas">
+								<field name="vivienda_ids" />
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>

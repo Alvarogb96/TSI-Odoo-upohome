@@ -8,29 +8,41 @@
 			<field name="arch" type="xml">
 				<form string="Formulario de empleados">
 					<group string="Empleados">
-						<field name="name" />
-						<field name="nombre" />
-						<field name="apellidos" />
-						<field name="telefono" />
-						<field name="salario" />
-						<field name="domicilio" />
-						<field name="cita_ids">
-							<tree>
-								<field name="name" />
-								<field name="fecha" />
-								<field name="descripcion" />
-								<field name="cliente_id" />
-								<field name="vivienda_ids" />
-							</tree>
-						</field>
-						<field name="limpieza_ids">
-							<tree>
-								<field name="name" />
-								<field name="fecha" />
-								<field name="finalizado" />
-								<field name="vivienda_id" />
-							</tree>
-						</field>
+						<group>
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos del empleado">
+								<group>
+									<field name="nombre" />
+									<field name="apellidos" />
+									<field name="telefono" />
+									<field name="salario" />
+									<field name="domicilio" />
+								</group>
+							</page>
+							<page string="Citas asociadas">
+								<field name="cita_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="descripcion" />
+										<field name="cliente_id" />
+										<field name="vivienda_ids" />
+									</tree>
+								</field>
+							</page>
+							<page string="Limpiezas asociadas">
+								<field name="limpieza_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="finalizado" />
+										<field name="vivienda_id" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</group>
 					<newline />
 					<button name="cancelarCitas" string="Cancelar citas"
