@@ -11,6 +11,7 @@ encoding//models/galeria.py=utf-8
 encoding//models/gas.py=utf-8
 encoding//models/internet.py=utf-8
 encoding//models/limpieza.py=utf-8
+encoding//models/models.py=utf-8
 encoding//models/propietario.py=utf-8
 encoding//models/reforma.py=utf-8
 encoding//models/vivienda.py=utf-8

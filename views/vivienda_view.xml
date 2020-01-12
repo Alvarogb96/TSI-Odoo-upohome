@@ -8,8 +8,10 @@
 			<field name="arch" type="xml">
 				<form string="Formulario de viviendas">
 					<header>
-						<button name="btn_submit_to_alquilada" string="Alquilar"
+						<button name="btn_submit_to_limpiando" string="Limpiar"
 							type="object" class="oe_highlight" states="noAlquilada" />
+						<button name="btn_submit_to_alquilada" string="Alquilar"
+							type="object" class="oe_highlight" states="limpiando" />
 						<button name="btn_submit_to_noAlquilada"
 							string="Liberar alquiler" type="object" class="oe_highlight"
 							states="alquilada" />

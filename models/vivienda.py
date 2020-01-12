@@ -10,7 +10,8 @@ class vivienda(models.Model):
     direccion = fields.Char('Dirección', size=60, required=True)
     precioAlquiler = fields.Float("Precio alquiler", required=True) 
     state = fields.Selection([('alquilada', 'Alquilada'),
-                              ('noAlquilada', 'No alquilada'),],
+                              ('noAlquilada', 'No alquilada'),
+                              ('limpiando','Limpiando'),],
                               "Estado", default='noAlquilada')
     imagenPrincipal = fields.Binary('Imagen') 
     numHabitaciones = fields.Integer("Numero de habitaciones",required=True)
@@ -38,6 +39,10 @@ class vivienda(models.Model):
     def btn_submit_to_noAlquilada(self):
         self.write({'state':'noAlquilada'})
         
+    @api.one
+    def btn_submit_to_limpiando(self):
+        self.write({'state':'limpiando'})
+        
     @api.one 
     @api.constrains('precioAlquiler')
     def check_precioAlquiler(self):
@@ -48,3 +53,7 @@ class vivienda(models.Model):
     def onchange_alquiler(self):
         if self.state != 'noAlquilada':
             raise models.ValidationError('La vivienda no está disponible para ser alquilada.')
+    
+    @api.onchange('limpieza_ids')
+    def onchange_limpieza(self):
+        self.state = 'limpiando'
