@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_limpieza_form_view">
+			<field name="name">upohome_limpieza_form_view</field>
+			<field name="model">upohome.limpieza</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de limpieza">
+					<group string="Limpieza">
+						<field name="name" />
+						<field name="fecha" />
+						<field name="finalizado" />
+						<field name="empleado_id" />
+						<field name="vivienda_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_limpieza_tree_view">
+			<field name="name">upohome_limpieza_tree_view</field>
+			<field name="model">upohome.limpieza</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de limpiezas">
+					<field name="name" />
+					<field name="fecha" />
+					<field name="finalizado" />
+					<field name="empleado_id" />
+					<field name="vivienda_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- vista graph para fecha limpieza -->
+
+		<record model="ir.ui.view" id="view_fecha_line_graph">
+			<field name="name">Limpieza</field>
+			<field name="model">upohome.limpieza</field>
+			<field name="type">graph</field>
+			<field name="arch" type="xml">
+				<graph string="Limpiezas">
+					<field name="fecha" />
+					<field name="name" group="True" />
+					<field name="finalizado" />
+				</graph>
+			</field>
+		</record>
+
+		<!-- Vista search agrupando por fecha -->
+		<record model="ir.ui.view" id="view_upohome_limpieza_search">
+			<field name="name">view_upohome_fecha_search</field>
+			<field name="model">upohome.limpieza</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<field name="fecha" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_fecha" string="Fecha de limpieza"
+							context="{'group_by':'fecha'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="act_limpieza" model="ir.actions.act_window">
+			<field name="name">Limpiezas</field>
+			<field name="res_model">upohome.limpieza</field>
+			<field name="view_mode">tree,form,graph</field>
+			<field name="search_view_id" ref="view_upohome_limpieza_search" />
+		</record>
+
+		<menuitem name="Limpiezas" id="limpieza_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver limpiezas" id="limpiezas_submenu_2"
+			parent="limpieza_submenu" sequence="110" action="act_limpieza" />
+	</data>
+</odoo>

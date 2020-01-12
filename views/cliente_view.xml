@@ -7,13 +7,41 @@
 			<field name="model">upohome.cliente</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de clientes">
-					<group string="Clientes">
-						<field name="name" />
-						<field name="nombre" />
-						<field name="apellidos" />
-						<field name="telefono" />
-						<field name="domicilio" />
-						<field name="alquiler_ids" />
+					<group string="Cliente">
+						<group colspan="4">
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos del cliente">
+								<group>
+									<field name="nombre" />
+									<field name="apellidos" />
+									<field name="telefono" />
+									<field name="domicilio" />
+								</group>
+							</page>
+							<page string="Alquileres asociados">
+								<field name="alquiler_ids">
+									<tree>
+										<field name="name" />
+										<field name="fechaInicio" />
+										<field name="fechaFin" />
+										<field name="vivienda_id" />
+									</tree>
+								</field>
+							</page>
+							<page string="Citas asociadas">
+								<field name="cita_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="descripcion" />
+										<field name="empleado_id" />
+										<field name="vivienda_ids" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>
@@ -28,12 +56,13 @@
 					<field name="apellidos" />
 					<field name="name" />
 					<field name="alquiler_ids" />
+					<field name="cita_ids" />
 				</tree>
 			</field>
 		</record>
-		
+
 		<!-- Vista search agrupando por alquiler_id -->
-		
+
 		<record model="ir.ui.view" id="view_upohome_cliente_search">
 			<field name="name">view_upohome_cliente_search</field>
 			<field name="model">upohome.cliente</field>

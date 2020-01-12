@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_propietario_form_view">
+			<field name="name">upohome_propietario_form_view</field>
+			<field name="model">upohome.propietario</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de propietarios">
+					<group string="Propietario">
+						<group>
+							<field name="name" />
+						</group>
+						<notebook colspan="4">
+							<page string="Datos del propietario">
+								<group>
+									<field name="nombre" />
+									<field name="apellidos" />
+									<field name="telefono" />
+								</group>
+							</page>
+							<page string="Viviendas asociadas">
+								<field name="vivienda_ids">
+									<tree>
+										<field name="name" />
+										<field name="direccion" />
+										<field name="precioAlquiler" />
+										<field name="numHabitaciones" />
+										<field name="descripcion" />
+										<field name="exterior" />
+										<field name="climatizacion" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_propietario_tree_view">
+			<field name="name">upohome_propietario_tree_view</field>
+			<field name="model">upohome.propietario</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de propietarios">
+					<field name="name" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="telefono" />
+					<field name="vivienda_ids" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_propietario" model="ir.actions.act_window">
+			<field name="name">Propietarios</field>
+			<field name="res_model">upohome.propietario</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Propietarios" id="propietarios_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver propietarios" id="propietarios_submenu_2"
+			parent="propietarios_submenu" sequence="110" action="act_propietario" />
+	</data>
+</odoo>

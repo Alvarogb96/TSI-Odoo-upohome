@@ -7,20 +7,84 @@
 			<field name="model">upohome.vivienda</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de viviendas">
+					<header>
+						<button name="btn_submit_to_limpiando" string="Limpiar"
+							type="object" class="oe_highlight" states="noAlquilada" />
+						<button name="btn_submit_to_alquilada" string="Alquilar"
+							type="object" class="oe_highlight" states="limpiando" />
+						<button name="btn_submit_to_noAlquilada"
+							string="Liberar alquiler" type="object" class="oe_highlight"
+							states="alquilada" />
+						<field name="state" widget="statusbar" />
+					</header>
 					<group string="Vivienda">
-						<field name="imagenPrincipal" nolabel="1" widget="image"
-							class="oe_avatar" />
-					</group>
-					<group>
-						<field name="name" />
-						<field name="direccion" />
-						<field name="precioAlquiler" />
-						<field name="estadoDeDisponibilidad" />
-						<field name="numHabitaciones" />
-						<field name="descripcion" />
-						<field name="exterior" />
-						<field name="climatizacion" />
-						<field name="alquiler_ids" />
+
+						<group>
+							<field name="imagenPrincipal" nolabel="1" widget="image"
+								class="oe_avatar" />
+						</group>
+						<group colspan="4">
+							<field name="name" />
+
+						</group>
+
+
+						<notebook colspan="4">
+							<page string="Datos de la vivienda">
+								<group>
+									<field name="direccion" />
+									<field name="precioAlquiler" />
+									<field name="numHabitaciones" />
+									<field name="descripcion" />
+									<field name="exterior" />
+									<field name="climatizacion" />
+									<field name="propietario_id" />
+									<field name="galeria_id" />
+								</group>
+							</page>
+							<page string="Alquileres asociados">
+								<field name="alquiler_ids">
+									<tree>
+										<field name="name" />
+										<field name="fechaInicio" />
+										<field name="fechaFin" />
+										<field name="cliente_id" />
+										<field name="contrato_ids" />
+									</tree>
+								</field>
+							</page>
+							<page string="Limpiezas asociadas">
+								<field name="limpieza_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="finalizado" />
+										<field name="empleado_id" />
+									</tree>
+								</field>
+							</page>
+							<page string="Reformas asociadas">
+								<field name="reforma_ids">
+									<tree>
+										<field name="name" />
+										<field name="añoReforma" />
+										<field name="partes" />
+										<field name="coste" />
+									</tree>
+								</field>
+							</page>
+							<page string="Citas asociadas">
+								<field name="cita_ids">
+									<tree>
+										<field name="name" />
+										<field name="fecha" />
+										<field name="descripcion" />
+										<field name="empleado_id" />
+										<field name="cliente_id" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</group>
 				</form>
 			</field>
@@ -34,11 +98,15 @@
 					<field name="name" />
 					<field name="direccion" />
 					<field name="precioAlquiler" />
-					<field name="estadoDeDisponibilidad" />
+					<field name="propietario_id" />
+					<field name="numHabitaciones" />
+					<field name="descripcion" />
+					<field name="exterior" />
+					<field name="climatizacion" />
 				</tree>
 			</field>
 		</record>
-		
+
 		<!-- Vista de gráfico por precio -->
 
 		<record model="ir.ui.view" id="upohome_vivienda_graph_view">

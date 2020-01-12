@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<data noupdate="1">
+	
+		 <record id="cliente10" model="upohome.cliente">
+
+			<field name="name">75757788W</field>
+
+			<field name="nombre">Federico</field>
+
+			<field name="apellidos">Jimenez</field>
+
+			<field name="telefono">677474744</field>
+
+			<field name="domicilio">Universidad Pablo olavide</field>
+			
+		</record>
+		
+		<record id="vivienda10" model="upohome.vivienda">
+
+			<field name="name">V45</field>
+
+			<field name="direccion">Avenida de la Palmera nº1</field>
+
+			<field name="precioAlquiler">1500</field>
+
+			<field name="state">noAlquilada</field>
+
+			<field name="numHabitaciones">4</field>
+
+			<field name="descripcion">1000 m2, buena iluminación, muebles nuevos</field>
+
+			<field name="exterior">si</field>
+
+			<field name="climatizacion">si</field>
+
+		</record>
+		
+		<record id="alquiler10" model="upohome.alquiler">
+
+			<field name="name">A89</field>
+
+			<field name="fechaInicio">10/01/2020</field>
+
+			<field name="fechaFin">20/01/2020</field>
+
+			<field name="cliente_id" ref="cliente10"></field>
+
+			<field name="vivienda_id" ref="vivienda10"></field>
+
+		</record>
+	
+		<record id="empleado10" model="upohome.empleado">
+
+			<field name="name">34529912W</field>
+
+			<field name="nombre">Francisco</field>
+
+			<field name="apellidos">Perez</field>
+
+			<field name="telefono">677943231</field>
+
+			<field name="salario">700</field>
+
+			<field name="domicilio">Arahal</field>
+
+		</record>
+
+	
+		<record id="cita10" model="upohome.cita">
+
+			<field name="name">C15</field>
+
+			<field name="fecha">11/01/2020</field>
+
+			<field name="descripcion">Cita de 30 minutos</field>
+
+			<field name="cliente_id" ref="cliente10"></field>
+
+			<field name="empleado_id" ref="empleado10"></field>
+
+			<field name="vivienda_ids" eval="[(6, 0, [vivienda10,])]"></field>
+
+		</record> 
+		
+
+		<record id="limpieza10" model="upohome.limpieza">
+
+			<field name="name">L8</field>
+
+			<field name="fecha">08/01/2020</field>
+
+			<field name="finalizado">si</field>
+
+			<field name="vivienda_id" ref="vivienda10"></field>
+
+			<field name="empleado_id" ref="empleado10"></field>
+
+		</record>
+		
+		<record id="reforma10" model="upohome.reforma">
+
+			<field name="name">R18</field>
+
+			<field name="añoReforma">2019</field>
+
+			<field name="partes">Cocina</field>
+			
+			<field name="coste">500</field>
+
+			<field name="vivienda_id" ref="vivienda10"></field>
+
+		</record>
+		
+		<record id="propietario10" model="upohome.propietario">
+
+			<field name="name">P20</field>
+
+			<field name="nombre">Sergio</field>
+
+			<field name="apellidos">Bermudo</field>
+
+			<field name="telefono">607984567</field>
+
+			<field name="vivienda_ids" eval="[(6, 0, [vivienda10,])]"></field>
+
+		</record> 
+		
+		<record id="contrato10" model="upohome.contrato">
+
+			<field name="name">6</field>
+
+			<field name="tarifa">20</field>
+			
+			<field name="compañia">Emasesa</field>
+			
+			<field name="alquiler_id" ref="alquiler10"></field>
+
+		</record>
+	
+	</data>
+
+</odoo>

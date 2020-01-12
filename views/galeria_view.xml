@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upohome_galeria_form_view">
+			<field name="name">upohome_galeria_form_view</field>
+			<field name="model">upohome.galeria</field>
+			<field name="arch" type="xml">
+				<form string="Galería de Imágenes">
+					<group string="Galería">
+						<group string="ID de la galería y ID de la vivienda">
+							<field name="name" />
+							<field name="vivienda_id" />
+						</group>
+
+						<notebook colspan="4">
+							<page string="Imagen 1">
+								<group>
+									<field name="imagen1" widget="image" class="oe_avatar" />
+								</group>
+								<group>
+									<field name="descripcion1" />
+								</group>
+							</page>
+							<page string="Imagen 2">
+								<group>
+									<field name="imagen2" widget="image" class="oe_avatar" />
+								</group>
+								<group>
+									<field name="descripcion2" />
+								</group>
+							</page>
+							<page string="Imagen 3">
+								<group>
+									<field name="imagen3" widget="image" class="oe_avatar" />
+								</group>
+								<group>
+									<field name="descripcion3" />
+								</group>
+							</page>
+							<page string="Imagen 4">
+								<group>
+									<field name="imagen4" widget="image" class="oe_avatar" />
+								</group>
+								<group>
+									<field name="descripcion4" />
+								</group>
+							</page>
+							<page string="Imagen 5">
+								<group>
+									<field name="imagen5" widget="image" class="oe_avatar" />
+								</group>
+								<group>
+									<field name="descripcion5" />
+								</group>
+							</page>
+						</notebook>
+
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_galeria_tree_view">
+			<field name="name">upohome_galeria_tree_view</field>
+			<field name="model">upohome.galeria</field>
+			<field name="arch" type="xml">
+				<tree string="Galería de Imágenes">
+					<field name="name"/>
+					<field name="vivienda_id" />
+					
+					<!--  
+					<field name="imagen1" nolabel="1" widget="image"
+						class="oe_avatar" />
+					<field name="descripcion1" />
+					<field name="imagen2" nolabel="1" widget="image"
+						class="oe_avatar" />
+					<field name="descripcion2" />
+					<field name="imagen3" nolabel="1" widget="image"
+						class="oe_avatar" />
+					<field name="descripcion3" />
+					<field name="imagen4" nolabel="1" widget="image"
+						class="oe_avatar" />
+					<field name="descripcion4" />
+					<field name="imagen5" nolabel="1" widget="image"
+						class="oe_avatar" />
+					<field name="descripcion5" />
+					-->
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_galeria" model="ir.actions.act_window">
+			<field name="name">Galería</field>
+			<field name="res_model">upohome.galeria</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Galería" id="galeria_submenu"
+			parent="upohome" sequence="100" />
+		<menuitem name="Ver galería" id="galeria_submenu_2"
+			parent="galeria_submenu" sequence="110" action="act_galeria" />
+	</data>
+</odoo>
