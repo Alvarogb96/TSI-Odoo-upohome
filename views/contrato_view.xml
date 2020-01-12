@@ -9,7 +9,8 @@
 				<form string="Formulario de contratos">
 					<group string="Contrato">
 						<field name="name" />
-						<field name="precioMedio" />
+						<field name="tarifa" />
+						<field name="compañia" />
 						<field name="alquiler_id"/>
 					</group>
 				</form>
@@ -22,7 +23,8 @@
 			<field name="arch" type="xml">
 				<tree string="Lista de contratos">
 					<field name="name" />
-					<field name="precioMedio" />
+					<field name="tarifa" />
+					<field name="compañia" />
 					<field name="alquiler_id"/>	
 				</tree>
 			</field>

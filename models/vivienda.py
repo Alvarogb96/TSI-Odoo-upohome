@@ -9,12 +9,8 @@ class vivienda(models.Model):
     name = fields.Char('ID vivienda', size=5, required=True)
     direccion = fields.Char('Dirección', size=60, required=True)
     precioAlquiler = fields.Float("Precio alquiler", required=True) 
-    #estadoDeDisponibilidad = fields.Selection([('alquilada', 'Alquilada'),
-    #                                ('noAlquilada', 'No alquilada'),
-    #                                 ('enReforma', 'En reforma'), ],
-    #                                 'Estado de disponibilidad')
     state = fields.Selection([('alquilada', 'Alquilada'),
-                              ('noAlquilada', 'No alquilada'), ],
+                              ('noAlquilada', 'No alquilada'),],
                               "Estado", default='noAlquilada')
     imagenPrincipal = fields.Binary('Imagen') 
     numHabitaciones = fields.Integer("Numero de habitaciones",required=True)
@@ -41,8 +37,14 @@ class vivienda(models.Model):
     @api.one
     def btn_submit_to_noAlquilada(self):
         self.write({'state':'noAlquilada'})
-    
-    @api.onchange('precioAlquiler')
-    def onchange_gymclass(self):
+        
+    @api.one 
+    @api.constrains('precioAlquiler')
+    def check_precioAlquiler(self):
         if self.precioAlquiler <= 0.0 : 
             raise models.ValidationError('El precio de alquiler debe ser superior a 0')
+        
+    @api.onchange('alquiler_ids')
+    def onchange_alquiler(self):
+        if self.state != 'noAlquilada':
+            raise models.ValidationError('La vivienda no está disponible para ser alquilada.')

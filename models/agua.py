@@ -4,7 +4,8 @@ from odoo import models, fields
 
 
 class agua(models.Model):
+    #HERENCIA POR PROTOTIPO
     _inherit = 'upohome.contrato'
+    _name = 'upohome.agua'
     
-    #name = fields.Char('Compañia', size = 45, required=True)
-    #tarifa = fields.Float('Precio estimado', required=True)
+    

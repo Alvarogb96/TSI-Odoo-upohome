@@ -132,7 +132,9 @@
 
 			<field name="name">6</field>
 
-			<field name="precioMedio">20</field>
+			<field name="tarifa">20</field>
+			
+			<field name="compañia">Emasesa</field>
 			
 			<field name="alquiler_id" ref="alquiler10"></field>
 

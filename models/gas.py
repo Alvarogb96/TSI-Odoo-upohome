@@ -4,7 +4,12 @@ from odoo import models, fields
 
 
 class gas(models.Model):
+    #HERENCIA POR PROTOTIPO
     _inherit = 'upohome.contrato'
+    _name = 'upohome.gas'
     
-    #name = fields.Char('Prueba', size = 45, required=True)
-    #tarifa = fields.Char('Tarifa', size = 65, required=True)
+    
+    tipo = fields.Selection([('butano', 'Butano'),
+                              ('natural', 'natural'), ],
+                              "Tipo de gas contratado", required=True)
+    

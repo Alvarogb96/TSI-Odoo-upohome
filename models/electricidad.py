@@ -4,9 +4,11 @@ from odoo import models, fields
 
 
 class electricidad(models.Model):
+    #HERENCIA POR PROTOTIPO
     _inherit = 'upohome.contrato'
+    _name = 'upohome.electricidad'
     
-    #name = fields.Char('Prueba2', size = 45, required=True)
-    #kw = fields.Integer('KW', required=True)
-    #tarifa = fields.Char('Tarifa', size = 45, required=True)
+    
+    kw = fields.Float('KW', required=True)
+    
     

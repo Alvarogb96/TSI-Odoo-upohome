@@ -3,7 +3,7 @@
     'name': "upohome",
     'summary': """Upohome alquileres""",
     'description': """Upohome alquileres:alquileres, clientes, viviendas...""",
-    'author': "Carlos Carvajal Moreno, Alvaro Gonzalez Barranco, Jesús Jiménez García",
+    'author': "Carlos Carvajal Moreno, Álvaro González Barranco, Jesús Jiménez García",
     'category': 'Upohome',
     'version': '0.1',
     'depends': ['base'],

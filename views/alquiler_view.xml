@@ -29,7 +29,8 @@
 									<field name="contrato_ids">
 										<tree>
 											<field name="name" />
-											<field name="precioMedio" />
+											<field name="tarifa" />
+											<field name="compañia" />
 										</tree>
 									</field>
 								</group>
